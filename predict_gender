@@ -15,5 +15,5 @@ Next I will show you how to do this in the messy data.
 2. from 78% to 91%
   When I look at distribution of dataset. I found that the ratio of customers who bought men's products and women's products is high. In practice, we can assume that the husband and the wife are sharing the same account or the wife bought products for the husband. And I realized that it is common for the wife to buy products for the husband. The husband probably seldom bought products for the wife. Based on the fact, I add a new column indicating whether a customer have bought both men's products and women's products.
   
-  Used the new data above, I finally got accuracy of 91%.
+  Used the new data above, I finally got accuracy of 91%. The algorithm can be used now.
   
