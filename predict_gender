@@ -4,16 +4,26 @@ I would like to present the result first. Accuracy from 21% to 78% to 91%.
 Next I will show you how to do this in the messy data.
 
 1. from 21% to 78%
-  The raw data is that each row represents a customer and a number of products the person has bought. The label is the gender that We have to predict.I implemented Random Forest first in raw dataset and got 21% accuracy.
+  The raw data is that each row represents a customer and a number of products the person has bought. The label is the gender 
+  that We have to predict.I implemented Random Forest first in raw dataset and got 21% accuracy.
   
-  Then I found that some products are related to gender. For example, we have products named "Women's shoes" and "Shavers". We do know that most women would buy Women's shoes instead of shavers in terms of their own need.And most men would need a shaver.
+  Then I found that some products are related to gender. For example, we have products named "Women's shoes" and "Shavers". 
+  We do know that most women would buy Women's shoes instead of shavers in terms of their own need.And most men would need a 
+  shaver.
   
-  So the basic idea is that Using word2vec in genism, I calculate the word similarity between name of products and male or female.For example, I calculate that the similarity between "male" and "shavers" is 0.78 and the similarity between "female" and "shavers" is 0.2. Then I would categorize the product "Shavers" to men's products, otherwise, women's products.
+  So the basic idea is that Using word2vec in genism, I calculate the word similarity between name of products and male or 
+  female.For example, I calculate that the similarity between "male" and "shavers" is 0.78 and the similarity between "female" 
+  and "shavers" is 0.2. Then I would categorize the product "Shavers" to men's products, otherwise, women's products.
   
-  Then each row is represented as customer_id, number of men's products purchased and number of women's products purchased. Now we feed the data into Random Forest and got 78% accuracy.
+  Then each row is represented as customer_id, number of men's products purchased and number of women's products purchased. 
+  Now we feed the data into Random Forest and got 78% accuracy.
   
 2. from 78% to 91%
-  When I look at distribution of dataset. I found that the ratio of customers who bought men's products and women's products is high. In practice, we can assume that the husband and the wife are sharing the same account or the wife bought products for the husband. And I realized that it is common for the wife to buy products for the husband. The husband probably seldom bought products for the wife. Based on the fact, I add a new column indicating whether a customer have bought both men's products and women's products.
+  When I look at distribution of dataset. I found that the ratio of customers who bought men's products and women's products 
+  is high. In practice, we can assume that the husband and the wife are sharing the same account or the wife bought products 
+  for the husband. And I realized that it is common for the wife to buy products for the husband. The husband probably seldom 
+  bought products for the wife. Based on the fact, I add a new column indicating whether a customer have bought both men's 
+  products and women's products.
   
-  Used the new data above, I finally got accuracy of 91%. The algorithm can be used now.
+  Used the new data above, I finally got accuracy of 91%.
   
