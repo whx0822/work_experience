@@ -1,0 +1,23 @@
+I am asked to design an ensemble recommendation algorithm.
+
+I combine many algorithms such as ALS-based collaborate filter, 
+SVD recommendation algorithm, item/user-based recommendation algorithm and content-based algorithm.
+
+I would like to share some experience about how to do content-based algorithm.
+
+We calculate similarity based on title and description of products.
+For title, I calculate 2-gram word similarity.
+For description, take clothes as example. Clothes may have different type of sleeves, colors, styles and so on.
+I just pick these information up from a long description and add labels to the product. For example, if the description in
+a product say it is long sleeves, red color and sexy style. I would know that and the product would be labeled as long sleeves, red color and sexy style.
+
+Then combined with the similarity of titles, I add different weights to titles, sleeves, colors and styles. Weights are trained to suit our problems.
+
+Also, different recommendation algorithm would have different weights. I also have taken many factors into account 
+such as season effect and people's interest decaying factor to different kinds of clothes, even different seasons in different
+countries(such as America and Australia). I will not cover this in detail. But through the product I did realize that in order
+to get better performance, we should know our customers first. We should know how they think, how they make decisions. For 
+example, you cannot recommend a skirt to Australian guys when they are in winter. And you cannot recommend a down jacket to 
+people in LA in summer where the temperature there is high.
+Considering how customers make decisions, then we can design our algorithm that suits the project.
+
